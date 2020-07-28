@@ -32,6 +32,6 @@ public class Main {
                 throw new IllegalStateException("Unexpected value: " + action);
         }
 
-        System.out.println("RESPONSE: " + response);
+        System.out.print(response);
     }
 }
