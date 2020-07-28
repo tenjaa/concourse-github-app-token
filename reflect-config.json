@@ -13,7 +13,16 @@
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest",
-    "allDeclaredFields": true,
+    "fields": [
+      {
+        "name": "source",
+        "allowWrite": true
+      },
+      {
+        "name": "version",
+        "allowWrite": true
+      }
+    ],
     "methods": [
       {
         "name": "<init>",
@@ -26,7 +35,20 @@
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
-    "allDeclaredFields": true,
+    "fields": [
+      {
+        "name": "appId",
+        "allowWrite": true
+      },
+      {
+        "name": "installationId",
+        "allowWrite": true
+      },
+      {
+        "name": "privateKey",
+        "allowWrite": true
+      }
+    ],
     "methods": [
       {
         "name": "<init>",
@@ -40,15 +62,54 @@
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.TokenResponse",
-    "allDeclaredFields": true
+    "fields": [
+      {
+        "name": "token",
+        "allowWrite": true
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.Version",
-    "allDeclaredFields": true
+    "fields": [
+      {
+        "name": "date",
+        "allowWrite": true
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.VersionWrapper",
-    "allDeclaredFields": true
+    "fields": [
+      {
+        "name": "version",
+        "allowWrite": true
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "eu.neufeldt.concoursegithubcredentials.model.Version"
+        ]
+      }
+    ]
   },
   {
     "name": "java.lang.reflect.AccessibleObject",
