@@ -1,2 +1,2 @@
 #!/bin/sh
-resource IN "$1"
+/opt/resource/resource IN "$1"

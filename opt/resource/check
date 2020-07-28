@@ -1,2 +1,2 @@
 #!/bin/sh
-resource CHECK
+/opt/resource/resource CHECK
