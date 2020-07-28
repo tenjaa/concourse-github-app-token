@@ -1,83 +1,66 @@
 [
   {
-    "name": "eu.neufeldt.concoursegithubcredentials.model.VersionWrapper",
-    "fields": [
-      {
-        "name": "version",
-        "allowWrite": true
-      }
-    ],
+    "name": "com.fasterxml.jackson.databind.ext.Java7SupportImpl",
     "methods": [
       {
         "name": "<init>",
-        "parameterTypes": [
-          "eu.neufeldt.concoursegithubcredentials.model.Version"
-        ]
+        "parameterTypes": []
       }
     ]
   },
   {
-    "name": "eu.neufeldt.concoursegithubcredentials.model.Version",
-    "fields": [
-      {
-        "name": "date",
-        "allowWrite": true
-      }
-    ],
-    "methods": [
-      {
-        "name": "<init>",
-        "parameterTypes": [
-          "java.lang.String"
-        ]
-      }
-    ]
+    "name": "com.fasterxml.jackson.databind.ser.Serializers[]"
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "eu.neufeldt.concoursegithubcredentials.model.TokenResponse",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "eu.neufeldt.concoursegithubcredentials.model.Version",
+    "allDeclaredFields": true
+  },
+  {
+    "name": "java.lang.reflect.AccessibleObject",
     "fields": [
       {
-        "name": "source",
-        "allowWrite": true
-      },
-      {
-        "name": "version",
-        "allowWrite": true
-      }
-    ],
-    "methods": [
-      {
-        "name": "<init>",
-        "parameterTypes": [
-          "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
-          "eu.neufeldt.concoursegithubcredentials.model.Version"
-        ]
+        "name": "override"
       }
     ]
   },
   {
-    "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
+    "name": "sun.misc.Unsafe",
     "fields": [
       {
-        "name": "appId",
-        "allowWrite": true
-      },
-      {
-        "name": "installationId",
-        "allowWrite": true
-      },
-      {
-        "name": "privateKey",
-        "allowWrite": true
+        "name": "theUnsafe"
       }
     ],
     "methods": [
       {
-        "name": "<init>",
+        "name": "allocateInstance",
         "parameterTypes": [
-          "int",
-          "int",
-          "java.lang.String"
+          "java.lang.Class"
+        ]
+      },
+      {
+        "name": "objectFieldOffset",
+        "parameterTypes": [
+          "java.lang.reflect.Field"
+        ]
+      },
+      {
+        "name": "putBoolean",
+        "parameterTypes": [
+          "java.lang.Object",
+          "long",
+          "boolean"
         ]
       }
     ]
