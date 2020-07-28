@@ -1,2 +1,2 @@
 #!/bin/sh
-../../test IN "$1"
+resource IN "$1"
