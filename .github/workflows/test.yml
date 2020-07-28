@@ -24,3 +24,4 @@ jobs:
       with:
         username: tenjaa
         password: ${{ secrets.docker_password }}
+        repository:  tenjaa/concourse-github-app-token 
