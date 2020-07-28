@@ -28,6 +28,10 @@
     "allDeclaredFields": true
   },
   {
+    "name": "eu.neufeldt.concoursegithubcredentials.model.VersionWrapper",
+    "allDeclaredFields": true
+  },
+  {
     "name": "java.lang.reflect.AccessibleObject",
     "fields": [
       {
