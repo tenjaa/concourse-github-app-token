@@ -13,11 +13,30 @@
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest",
-    "allDeclaredFields": true
+    "allDeclaredFields": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
+          "eu.neufeldt.concoursegithubcredentials.model.Version"
+        ]
+      }
+    ]
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.InRequest$Source",
-    "allDeclaredFields": true
+    "allDeclaredFields": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "int",
+          "int",
+          "java.lang.String"
+        ]
+      }
+    ]
   },
   {
     "name": "eu.neufeldt.concoursegithubcredentials.model.TokenResponse",
