@@ -18,6 +18,6 @@ class OutTest {
         String check = out.check();
 
         // then
-        assertThat(check).isEqualTo("{\"date\":\"2020-07-26T17:37:19Z\"}");
+        assertThat(check).isEqualTo("{\"version\":{\"date\":\"2020-07-26T17:37:19Z\"}}");
     }
 }

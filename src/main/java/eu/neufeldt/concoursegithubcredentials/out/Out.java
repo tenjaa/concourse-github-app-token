@@ -2,6 +2,7 @@ package eu.neufeldt.concoursegithubcredentials.out;
 
 import com.google.gson.Gson;
 import eu.neufeldt.concoursegithubcredentials.model.Version;
+import eu.neufeldt.concoursegithubcredentials.model.VersionWrapper;
 
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
@@ -17,6 +18,6 @@ public class Out {
     public String check() {
         DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT;
         String date = formatter.format(instant);
-        return new Gson().toJson(new Version(date));
+        return new Gson().toJson(new VersionWrapper(new Version(date)));
     }
 }

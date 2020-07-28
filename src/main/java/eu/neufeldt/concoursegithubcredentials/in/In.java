@@ -5,9 +5,9 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.google.gson.Gson;
 import eu.neufeldt.concoursegithubcredentials.EncryptionUtils;
-import eu.neufeldt.concoursegithubcredentials.model.InOutput;
 import eu.neufeldt.concoursegithubcredentials.model.InRequest;
 import eu.neufeldt.concoursegithubcredentials.model.TokenResponse;
+import eu.neufeldt.concoursegithubcredentials.model.VersionWrapper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -68,6 +68,6 @@ public class In {
         Path tokenFile = path.resolve("token");
         Files.writeString(tokenFile, tokenResponse.token);
 
-        return GSON.toJson(new InOutput(inRequest.version));
+        return GSON.toJson(new VersionWrapper(inRequest.version));
     }
 }

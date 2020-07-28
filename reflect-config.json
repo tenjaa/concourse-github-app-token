@@ -1,6 +1,6 @@
 [
   {
-    "name": "eu.neufeldt.concoursegithubcredentials.model.CheckRequest",
+    "name": "eu.neufeldt.concoursegithubcredentials.model.VersionWrapper",
     "fields": [
       {
         "name": "version",

@@ -1,9 +1,9 @@
 package eu.neufeldt.concoursegithubcredentials.model;
 
-public class CheckRequest {
+public class VersionWrapper {
     public final Version version;
 
-    public CheckRequest(Version version) {
+    public VersionWrapper(Version version) {
         this.version = version;
     }
 }
