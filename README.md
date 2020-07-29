@@ -28,7 +28,7 @@ resources:
 jobs:
 - name: my-job
   plan:
-  - put: github-token
+  - put: github-token # put forces to get a new token, even when rerunning a build (https://concourse-ci.org/builds.html#build-rerunning)
   - load_var: token
     file: github-token/token
   - task: print-env
