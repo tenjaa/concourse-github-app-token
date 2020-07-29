@@ -12,7 +12,7 @@ public class Check {
 
         VersionWrapper checkRequest = gson.fromJson(stdin, VersionWrapper.class);
 
-        if (checkRequest.version == null) {
+        if (checkRequest == null || checkRequest.version == null) {
             return "[]";
         } else {
             return "[{\"date\":\"" + checkRequest.version.date + "\"}]";

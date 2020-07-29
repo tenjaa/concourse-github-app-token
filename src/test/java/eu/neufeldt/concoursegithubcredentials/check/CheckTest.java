@@ -24,6 +24,15 @@ class CheckTest {
     }
 
     @Test
+    void doNotCreateInitialVersion2() {
+        // when
+        String versions = check.check("");
+
+        // then
+        assertThat(versions).isEqualTo("[]");
+    }
+
+    @Test
     void returnGivenDateAsCurrentVersion() {
         // when
         String versions = check.check("{\"version\":{\"date\":\"someDate\"}}");
