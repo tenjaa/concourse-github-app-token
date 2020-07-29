@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test
-      run: docker pull tenjaa/concourse-github-app-token:${GITHUB_SHA}
+      run: ./e2e
   release:
     needs: [e2e]
     if: github.ref == 'master'
