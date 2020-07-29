@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: test
-      run: ./e2e
+      run: ./e2e.sh
   release:
     needs: [e2e]
     if: github.ref == 'master'
