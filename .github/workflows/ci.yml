@@ -23,7 +23,7 @@ jobs:
         username: tenjaa
         password: ${{ secrets.docker_password }}
         repository:  tenjaa/concourse-github-app-token
-        tag_with_sha: ${{ github.sha }}
+        tags: ${{ github.sha }}
   e2e:
     needs: [build]
     runs-on: ubuntu-latest
