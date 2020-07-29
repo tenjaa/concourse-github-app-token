@@ -25,12 +25,14 @@ jobs:
         repository:  tenjaa/concourse-github-app-token
         tag_with_sha: ${{ github.sha }}
   e2e:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: test
       run: docker pull tenjaa/concourse-github-app-token:${GITHUB_SHA}
   release:
+    needs: [e2e]
     if: github.ref == 'master'
     runs-on: ubuntu-latest
     steps:
