@@ -1,4 +1,4 @@
-name: test
+name: ci
 
 on:
   push:
@@ -23,5 +23,15 @@ jobs:
         username: tenjaa
         password: ${{ secrets.docker_password }}
         repository:  tenjaa/concourse-github-app-token
-        tag_with_sha: true
-        tag_with_ref: true
+        tag_with_sha: ${{ github.sha }}
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: test
+      run: docker pull tenjaa/concourse-github-app-token:${GITHUB_SHA}
+  release:
+    if: github.ref == 'master'
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "demo"
