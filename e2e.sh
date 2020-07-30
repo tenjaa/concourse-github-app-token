@@ -17,8 +17,9 @@ if [[ "$checkReturnGiven" != '[{"date":"some-date"}]' ]]; then
   exit 1
 fi
 
-outDate=$(echo 'stdin is ignored anyway' | docker run -i "${image}" /opt/resource/out | jq '.version.date')
+outDate=$(echo 'stdin is ignored anyway' | docker run -i "${image}" /opt/resource/out | jq -r '.version.date')
 
 if ! date --iso-8601 -d "${outDate}"; then
   echo "Error parsing date: outDate"
+  exit 1
 fi
