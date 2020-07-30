@@ -36,7 +36,8 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-    - run: |
+    - name: Update latest tag on Docker Hub
+      run: |
         echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USER}" --password-stdin
         docker pull tenjaa/concourse-github-app-token:${GITHUB_SHA}
         docker tag tenjaa/concourse-github-app-token:${GITHUB_SHA} tenjaa/concourse-github-app-token:latest
