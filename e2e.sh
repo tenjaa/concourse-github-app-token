@@ -28,8 +28,8 @@ fi
 
 echo "Testing OUT successfully done"
 
-inRequest="{\"source\":{\"appId\":${APP_ID},\"installationId\":${INSTALLATION_ID},\"privateKey\":\"${PRIVATE_KEY}\"},\"version\":{\"date\":\"someDate\"}}"
-inResponse=$(echo "${inRequest}" | docker run -i "${image}" /opt/resource/in "/" | jq '.version.date')
+inRequest="{\"source\":{\"appId\":${APP_ID},\"installationId\":${INSTALLATION_ID},\"privateKey\":\"${PRIVATE_KEY}\"},\"version\":{\"date\":\"some-date\"}}"
+inResponse=$(echo "${inRequest}" | docker run -i "${image}" /opt/resource/in "/")
 
 if [[ "$inResponse" != '{"version":{"date":"some-date"}}' ]]; then
   echo "Invalid inResponse: ${inResponse}"
@@ -38,7 +38,7 @@ fi
 
 containerId=$(docker ps -a -q -l)
 docker cp "${containerId}:/token" .
-repo=$(curl -s -H "Accept: application/vnd.github.machine-man-preview+json" -H "Authorization: token $(cat token)" "https://api.github.com/installation/repositories" | jq -r '.[0].name')
+repo=$(curl -s -H "Accept: application/vnd.github.machine-man-preview+json" -H "Authorization: token $(cat token)" "https://api.github.com/installation/repositories" | jq -r '.repositories[0].name')
 if [[ "$repo" != 'concourse-github-app-token' ]]; then
   echo "Invalid repo: ${repo}"
   exit 1
