@@ -23,3 +23,13 @@ if ! date --iso-8601 -d "${outDate}"; then
   echo "Error parsing date: outDate"
   exit 1
 fi
+
+inRequest="{\"source\":{\"appId\":${APP_ID},\"installationId\":${INSTALLATION_ID},\"privateKey\":\"${PRIVATE_KEY}\"},\"version\":{\"date\":\"someDate\"}}"
+
+inResponse=$(echo "${inRequest}" | docker run -i "${image}" /opt/resource/in "/" | jq '.version.date')
+containerId=$(docker ps -a -q -l)
+
+docker cp "${containerId}:/token" .
+
+ls
+cat token
