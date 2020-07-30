@@ -55,16 +55,13 @@ public class In {
 
         HttpClient client = HttpClient.newHttpClient();
         String urlString = baseUrl + "app/installations/" + inRequest.source.installationId + "/access_tokens";
-        System.err.println("URL as String: " + urlString);
         URI urlUri = URI.create(urlString);
-        System.err.println("URL as URI: " + urlUri);
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(urlUri)
                 .POST(HttpRequest.BodyPublishers.noBody())
                 .header("Authorization", "Bearer " + token)
                 .header("Accept", "application/vnd.github.machine-man-preview+json")
                 .build();
-        System.err.println("Request: " + request);
         HttpResponse<String> send = client.send(request, HttpResponse.BodyHandlers.ofString());
         TokenResponse tokenResponse = GSON.fromJson(send.body(), TokenResponse.class);
 
