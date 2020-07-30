@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 image="tenjaa/concourse-github-app-token:${GITHUB_SHA}"
 
