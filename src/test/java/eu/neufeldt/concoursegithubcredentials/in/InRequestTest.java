@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.FileSystem;
-import java.security.GeneralSecurityException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
@@ -21,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 class InRequestTest {
 
-    private final InRequest.Source source = new InRequest.Source(123, "tenjaa", null, "private key");
+    private final InRequest.Source source = new InRequest.Source(123, "private key", "tenjaa", null);
     private final Version version = new Version("someDate");
     private final InRequest inRequest = new InRequest(source, version);
     private final Gson gson = new Gson();

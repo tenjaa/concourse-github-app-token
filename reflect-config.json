@@ -41,11 +41,15 @@
         "allowWrite": true
       },
       {
-        "name": "installationId",
+        "name": "privateKey",
         "allowWrite": true
       },
       {
-        "name": "privateKey",
+        "name": "user",
+        "allowWrite": true
+      },
+      {
+        "name": "org",
         "allowWrite": true
       }
     ],
@@ -54,7 +58,8 @@
         "name": "<init>",
         "parameterTypes": [
           "int",
-          "int",
+          "java.lang.String",
+          "java.lang.String",
           "java.lang.String"
         ]
       }

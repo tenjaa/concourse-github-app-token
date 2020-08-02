@@ -11,15 +11,15 @@ public class InRequest {
 
     public static class Source {
         public final int appId;
+        public final String privateKey;
         public final String user;
         public final String org;
-        public final String privateKey;
 
-        public Source(int appId, String user, String org, String privateKey) {
+        public Source(int appId, String privateKey, String user, String org) {
             this.appId = appId;
+            this.privateKey = privateKey;
             this.user = user;
             this.org = org;
-            this.privateKey = privateKey;
         }
     }
 }
