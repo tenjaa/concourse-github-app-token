@@ -117,6 +117,23 @@
     ]
   },
   {
+    "name": "eu.neufeldt.concoursegithubcredentials.model.InstallationResponse",
+    "fields": [
+      {
+        "name": "id",
+        "allowWrite": true
+      }
+    ],
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "int"
+        ]
+      }
+    ]
+  },
+  {
     "name": "java.lang.reflect.AccessibleObject",
     "fields": [
       {
