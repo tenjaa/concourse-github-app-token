@@ -22,9 +22,11 @@ resources:
 - name: github-token
   type: github-token-resource
   source:
-    appId: ((github-app-id))
-    installationId: ((github-app-installation-id))
-    privateKey: ((github-app-private-key))
+    appId: ((github-app-id)) # can be looked up on the overview page of your app
+    privateKey: ((github-app-private-key)) # https://docs.github.com/en/developers/apps/authenticating-with-github-apps#generating-a-private-key
+    user: tenjaa # get a token for an app installed to a user account
+      # OR
+    org: my-org # get a token for an app installed to an org account
 
 jobs:
 - name: my-job
