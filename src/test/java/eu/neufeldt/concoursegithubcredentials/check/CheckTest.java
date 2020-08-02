@@ -1,5 +1,7 @@
 package eu.neufeldt.concoursegithubcredentials.check;
 
+import eu.neufeldt.concoursegithubcredentials.model.Version;
+import eu.neufeldt.concoursegithubcredentials.model.VersionWrapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +19,7 @@ class CheckTest {
     @Test
     void doNotCreateInitialVersion() {
         // when
-        String versions = check.check("{}");
+        String versions = check.check(null);
 
         // then
         assertThat(versions).isEqualTo("[]");
@@ -26,7 +28,7 @@ class CheckTest {
     @Test
     void doNotCreateInitialVersion2() {
         // when
-        String versions = check.check("");
+        String versions = check.check(new VersionWrapper(null));
 
         // then
         assertThat(versions).isEqualTo("[]");
@@ -35,7 +37,7 @@ class CheckTest {
     @Test
     void returnGivenDateAsCurrentVersion() {
         // when
-        String versions = check.check("{\"version\":{\"date\":\"someDate\"}}");
+        String versions = check.check(new VersionWrapper(new Version("someDate")));
 
         // then
         assertThat(versions).isEqualTo("[{\"date\":\"someDate\"}]");

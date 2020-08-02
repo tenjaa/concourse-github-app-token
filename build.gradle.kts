@@ -15,6 +15,7 @@ dependencies {
     implementation("org.json:json:20200518")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.6.2")
     testImplementation("org.assertj:assertj-core:3.16.1")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.8.0")
     testImplementation("com.google.jimfs:jimfs:1.1")

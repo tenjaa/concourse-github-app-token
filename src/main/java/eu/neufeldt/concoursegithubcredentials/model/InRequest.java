@@ -11,12 +11,14 @@ public class InRequest {
 
     public static class Source {
         public final int appId;
-        public final int installationId;
+        public final String user;
+        public final String org;
         public final String privateKey;
 
-        public Source(int appId, int installationId, String privateKey) {
+        public Source(int appId, String user, String org, String privateKey) {
             this.appId = appId;
-            this.installationId = installationId;
+            this.user = user;
+            this.org = org;
             this.privateKey = privateKey;
         }
     }
