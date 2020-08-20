@@ -1,5 +1,5 @@
 # concourse-github-app-token
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tenjaa/concourse-github-app-token/latest)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tenjaa/concourse-github-app-token/latest?style=flat-square)](https://hub.docker.com/r/tenjaa/concourse-github-app-token)
 
 ## What?
 This concourse resource gets you an installation token for your GitHub App.
