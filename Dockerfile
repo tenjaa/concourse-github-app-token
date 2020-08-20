@@ -1,4 +1,4 @@
-FROM oracle/graalvm-ce:20.1.0-java11@sha256:b2878190f3f802b71aec3d780d361781aaf00b168148af729b3f348326fb556e as build
+FROM oracle/graalvm-ce:20.2.0-java11@sha256:099235909a9ba9e76bd81ef56a22d70674ab6d266b4c5d7c202ee6a1e1af4398 as build
 RUN gu install native-image
 COPY build/libs/concourse-github-app-token.jar /app/concourse-github-app-token.jar
 COPY reflect-config.json /app/reflect-config.json
