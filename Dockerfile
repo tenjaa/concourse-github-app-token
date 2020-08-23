@@ -4,7 +4,7 @@ COPY build/libs/concourse-github-app-token.jar /app/concourse-github-app-token.j
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -H:+StaticExecutableWithDynamicLibC -jar concourse-github-app-token.jar
 
-FROM gcr.io/distroless/base
+FROM gcr.io/distroless/base-debian10
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
 ENTRYPOINT ["sh"]
