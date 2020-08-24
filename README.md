@@ -8,7 +8,7 @@ This concourse resource gets you an installation token for your GitHub App.
 Accessing the GitHub API typically requires some authentication, like [setting a commit status](https://docs.github.com/en/rest/reference/repos#statuses).
 Using a shared [machine user](https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users) might not always be wanted or possible (e.g. GitHub Enterprise restrictions).
 
-Also I just wanted to use GraalVM and needed a project with actual use :)
+Also, I just wanted to use GraalVM and needed a project with actual use :)
 
 ## Example
 ```yaml
