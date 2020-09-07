@@ -18,7 +18,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Build and push Docker image
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v2
       with:
         username: tenjaa
         password: ${{ secrets.docker_password }}
