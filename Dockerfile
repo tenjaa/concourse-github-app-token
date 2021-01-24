@@ -1,7 +1,7 @@
 FROM alpine:3.13.0@sha256:d0710affa17fad5f466a70159cc458227bd25d4afb39514ef662ead3e6c99515 as libstdcplusplus-provider
 RUN apk add g++
 
-FROM oracle/graalvm-ce:20.3.0-java11@sha256:5248e0c353cef025d824c28403f35e3c0d757f1bbcf70eb68ecf35b8787ed77e as build
+FROM ghcr.io/graalvm/graalvm-ce:latest@sha256:48626d4911e679c63017f95dc2773a9b155ea639952e5c5277ffe27b9e08d4e0 as build
 RUN gu install native-image
 
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
