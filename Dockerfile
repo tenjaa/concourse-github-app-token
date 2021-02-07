@@ -1,4 +1,4 @@
-FROM alpine:3.13.1@sha256:3747d4eb5e7f0825d54c8e80452f1e245e24bd715972c919d189a62da97af2ae as libstdcplusplus-provider
+FROM alpine:3.13.1@sha256:08d6ca16c60fe7490c03d10dc339d9fd8ea67c6466dea8d558526b1330a85930 as libstdcplusplus-provider
 RUN apk add g++
 
 FROM ghcr.io/graalvm/graalvm-ce:latest@sha256:48626d4911e679c63017f95dc2773a9b155ea639952e5c5277ffe27b9e08d4e0 as build
@@ -28,6 +28,6 @@ COPY build/libs/concourse-github-app-token.jar /app/concourse-github-app-token.j
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar
 
-FROM alpine:3.13.1@sha256:3747d4eb5e7f0825d54c8e80452f1e245e24bd715972c919d189a62da97af2ae
+FROM alpine:3.13.1@sha256:08d6ca16c60fe7490c03d10dc339d9fd8ea67c6466dea8d558526b1330a85930
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
