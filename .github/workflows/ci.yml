@@ -25,16 +25,29 @@ jobs:
         username: tenjaa
         password: ${{ secrets.docker_password }}
     - name: Build and push Docker image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v2.4.0
       with:
         context: .
-        push: true
-        tags: tenjaa/concourse-github-app-token:${{ github.sha }}
+        load: true
+        tags: concourse-github-app-token
+    - name: Save image
+      run: |
+        docker save concourse-github-app-token > concourse-github-app-token.tar
+    - name: Pass image to next job
+      uses: actions/upload-artifact@v2
+      with:
+        name: image
+        path: concourse-github-app-token.tar
   e2e:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
+    - uses: actions/download-artifact@v2
+      with:
+        name: image
+    - run: |
+        docker load < concourse-github-app-token.tar
     - name: test
       run: ./e2e.sh
       env:
