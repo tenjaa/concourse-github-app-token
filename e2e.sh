@@ -2,7 +2,8 @@
 
 image="tenjaa/concourse-github-app-token:${GITHUB_SHA}"
 
-docker pull "${image}"
+appId=74610
+privateKey=$(cat test.private-key.pem)
 
 checkEmpty=$(echo '{}' | docker run -i "${image}" /opt/resource/check)
 checkReturnGiven=$(echo "{\"version\":{\"date\":\"some-date\"}}" | docker run -i "${image}" /opt/resource/check)
