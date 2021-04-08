@@ -29,7 +29,7 @@ fi
 
 echo "Testing OUT successfully done"
 
-inRequest="{\"source\":{\"appId\":${APP_ID},\"user\":\"tenjaa\",\"privateKey\":\"${PRIVATE_KEY}\"},\"version\":{\"date\":\"some-date\"}}"
+inRequest="{\"source\":{\"appId\":${appId},\"user\":\"tenjaa\",\"privateKey\":\"${privateKey}\"},\"version\":{\"date\":\"some-date\"}}"
 inResponse=$(echo "${inRequest}" | docker run -i "${image}" /opt/resource/in "/")
 
 if [[ "$inResponse" != '{"version":{"date":"some-date"}}' ]]; then
