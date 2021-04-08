@@ -1,5 +1,6 @@
 # concourse-github-app-token1
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tenjaa/concourse-github-app-token/latest?style=flat-square)](https://hub.docker.com/r/tenjaa/concourse-github-app-token)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftenjaa%2Fconcourse-github-app-token.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftenjaa%2Fconcourse-github-app-token?ref=badge_shield)
 
 ## What?
 This concourse resource gets you an installation token for your GitHub App.
@@ -53,3 +54,7 @@ A combination of [var sources](https://github.com/concourse/rfcs/blob/master/039
 - https://docs.github.com/en/developers/apps
 - https://docs.github.com/en/rest/reference/apps#create-an-installation-access-token-for-an-app
 - https://developer.github.com/changes/2020-02-14-deprecating-password-auth/
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftenjaa%2Fconcourse-github-app-token.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftenjaa%2Fconcourse-github-app-token?ref=badge_large)
