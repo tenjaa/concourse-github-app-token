@@ -24,10 +24,10 @@ jobs:
       with:
         context: .
         load: true
-        tags: concourse-github-app-token
+        tags: tenjaa/concourse-github-app-token:${{ github.sha }}
     - name: Save image
       run: |
-        docker save concourse-github-app-token > concourse-github-app-token.tar
+        docker save tenjaa/concourse-github-app-token:${{ github.sha }} > concourse-github-app-token.tar
     - name: Pass image to next job
       uses: actions/upload-artifact@v2
       with:
@@ -54,12 +54,19 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-    - name: Update latest tag on Docker Hub
+    - uses: actions/download-artifact@v2
+      with:
+        name: image
+    - run: |
+        docker load < concourse-github-app-token.tar
+    - name: Update latest tag
       run: |
-        echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USER}" --password-stdin
-        docker pull tenjaa/concourse-github-app-token:${GITHUB_SHA}
         docker tag tenjaa/concourse-github-app-token:${GITHUB_SHA} tenjaa/concourse-github-app-token:latest
-        docker push tenjaa/concourse-github-app-token
-      env:
-        DOCKER_USER: tenjaa
-        DOCKER_PASSWORD: ${{ secrets.docker_password }}
+    - uses: docker/login-action@v1.8.0
+      with:
+        username: tenjaa
+        password: ${{ secrets.docker_password }}
+    - uses: docker/build-push-action@v2.4.0
+      with:
+        push: true
+        tags: tenjaa/concourse-github-app-token:latest
