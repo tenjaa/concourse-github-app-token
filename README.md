@@ -1,6 +1,7 @@
 # concourse-github-app-token1
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/tenjaa/concourse-github-app-token/latest?style=flat-square)](https://hub.docker.com/r/tenjaa/concourse-github-app-token)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8daa2b0527e6e774a61e/maintainability)](https://codeclimate.com/github/tenjaa/concourse-github-app-token/maintainability)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B24537%2Fgithub.com%2Ftenjaa%2Fconcourse-github-app-token.svg?type=small)](https://app.fossa.com/projects/custom%2B24537%2Fgithub.com%2Ftenjaa%2Fconcourse-github-app-token?ref=badge_small)
 
 ## What?
 This concourse resource gets you an installation token for your GitHub App.
