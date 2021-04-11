@@ -64,7 +64,17 @@ jobs:
       with:
         username: tenjaa
         password: ${{ secrets.docker_password }}
+    - name: Login to Public ECR
+      uses: docker/login-action@v1.8.0
+      with:
+        registry: public.ecr.aws
+        username: ${{ secrets.ECR_ACCESS_KEY_ID }}
+        password: ${{ secrets.ECR_SECRET_ACCESS_KEY }}
+      env:
+        AWS_REGION: eu-west-1
     - name: Update latest tag
       run: |
         docker tag tenjaa/concourse-github-app-token:${GITHUB_SHA} tenjaa/concourse-github-app-token:latest
+        docker tag tenjaa/concourse-github-app-token:${GITHUB_SHA} public.ecr.aws/f1s7y4s6/concourse-github-app-token:latest
         docker push tenjaa/concourse-github-app-token:latest
+        docker push public.ecr.aws/f1s7y4s6/concourse-github-app-token:latest
