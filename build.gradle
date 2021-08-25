@@ -12,7 +12,7 @@ dependencies {
 
     implementation("commons-io:commons-io:2.11.0")
     implementation("com.auth0:java-jwt:3.18.1")
-    implementation("com.google.code.gson:gson:2.8.7")
+    implementation("com.google.code.gson:gson:2.8.8")
     implementation("org.json:json:20210307")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
@@ -20,7 +20,7 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.20.2")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
     testImplementation("com.google.jimfs:jimfs:1.2")
-    testImplementation("org.mockito:mockito-core:3.11.2")
+    testImplementation("org.mockito:mockito-core:3.12.3")
 }
 
 application {
