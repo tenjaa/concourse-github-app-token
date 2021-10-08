@@ -1,6 +1,6 @@
 plugins {
-    id 'java'
-    id 'application'
+    java
+    application
 }
 
 repositories {
@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    def junitVersion = '5.8.1'
+    val junitVersion = "5.8.1"
 
     implementation("commons-io:commons-io:2.11.0")
     implementation("com.auth0:java-jwt:3.18.2")
@@ -23,23 +23,15 @@ dependencies {
     testImplementation("org.mockito:mockito-core:3.12.4")
 }
 
-application {
-    mainClassName = "eu.neufeldt.concoursegithubcredentials.Main"
-}
-
-test {
+tasks.test {
     useJUnitPlatform()
 }
 
-jar {
+tasks.jar {
     manifest {
-        attributes(
-                "Main-Class": application.mainClassName
-        )
+        attributes["Main-Class"] = "eu.neufeldt.concoursegithubcredentials.Main"
     }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
