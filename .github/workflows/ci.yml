@@ -1,5 +1,7 @@
 name: ci
 
+concurrency: ci
+
 on:
   push:
     branches: [ main ]
