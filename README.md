@@ -18,7 +18,9 @@ resource_types:
 - name: github-token-resource
   type: registry-image
   source:
-    repository: tenjaa/concourse-github-app-token
+    repository: tenjaa/concourse-github-app-token # or
+    repository: public.ecr.aws/tenjaa/concourse-github-app-token # or
+    repository: ghcr.io/tenjaa/concourse-github-app-token
 
 resources:
 - name: github-token
