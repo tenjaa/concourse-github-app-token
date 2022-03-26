@@ -25,7 +25,7 @@ jobs:
       run: |
         docker save tenjaa/concourse-github-app-token:${{ github.sha }} > concourse-github-app-token.tar
     - name: Pass image to next job
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: image
         path: concourse-github-app-token.tar
