@@ -1,4 +1,4 @@
-FROM openjdk:17.0.1@sha256:c7fffc2024948e6d75922025a17b7d81cb747fd0fe0167fef13c6fcfc72e4144 as java-builder
+FROM openjdk:17.0.2@sha256:d3ba674d6cbaf782030d708c3bd5eec291f56de2473a6136b9ab427753810482 as java-builder
 WORKDIR concourse-github-app-token
 COPY gradle gradle
 COPY src src
@@ -8,7 +8,7 @@ COPY gradlew.bat gradlew.bat
 COPY reflect-config.json reflect-config.json
 RUN ./gradlew build --no-daemon
 
-FROM ghcr.io/graalvm/graalvm-ce:21.3.0@sha256:43c732d19ff8dad579038bd1d452345dbc8e9870f4a2cd7883ed252a923ac268 as build
+FROM ghcr.io/graalvm/graalvm-ce:21.3.1@sha256:ba39552d9b64a9649582faacd3f12d77b8c50ae45e7b35968da2a4c99638acdd as build
 RUN gu install native-image
 
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
@@ -32,6 +32,6 @@ COPY --from=java-builder concourse-github-app-token/build/libs/concourse-github-
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar --allow-incomplete-classpath
 
-FROM alpine:3.14.3@sha256:635f0aa53d99017b38d1a0aa5b2082f7812b03e3cdb299103fe77b5c8a07f1d2
+FROM alpine:3.15.2@sha256:ceeae2849a425ef1a7e591d8288f1a58cdf1f4e8d9da7510e29ea829e61cf512
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
