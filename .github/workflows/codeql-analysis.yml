@@ -21,11 +21,11 @@ jobs:
       uses: github/codeql-action/init@v1
       with:
         languages: java
-    - name: Set up Java 11
+    - name: Set up Java
       uses: actions/setup-java@v3.0.0
       with:
         distribution: 'adopt'
-        java-version: 11
+        java-version: 17
     - name: Build with Gradle
       run: ./gradlew build
     - name: Perform CodeQL Analysis
