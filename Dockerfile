@@ -1,4 +1,4 @@
-FROM openjdk:18@sha256:80b198dad35eaca5d4a87ddb9745ba439925b072bb41079c40c4189f93a30b29 as java-builder
+FROM openjdk:19@sha256:ad5eab9ef6f4e4d0dd971ea0e94eaf992f4d8fb1853ee5d8dfac7e273f4dfed3 as java-builder
 WORKDIR concourse-github-app-token
 COPY gradle gradle
 COPY src src
