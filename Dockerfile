@@ -16,7 +16,7 @@ RUN mkdir musl
 RUN curl https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz --output musl.tgz
 RUN tar -xzf musl.tgz -C musl --strip-components 1
 RUN mkdir zlib
-RUN curl https://zlib.net/zlib-1.2.11.tar.gz --output zlib.tar.gz
+RUN curl https://zlib.net/zlib-1.2.12.tar.gz --output zlib.tar.gz
 RUN tar -xzf zlib.tar.gz -C zlib --strip-components 1
 
 ENV CC=/musl/bin/gcc
