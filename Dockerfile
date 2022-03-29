@@ -1,4 +1,4 @@
-FROM openjdk:19@sha256:ad5eab9ef6f4e4d0dd971ea0e94eaf992f4d8fb1853ee5d8dfac7e273f4dfed3 as java-builder
+FROM openjdk:19@sha256:e9f335d844787fe01ded1e4217fea38701ddb00c4237e41aa5ccebf38e140845 as java-builder
 WORKDIR concourse-github-app-token
 COPY gradle gradle
 COPY src src
@@ -32,6 +32,6 @@ COPY --from=java-builder concourse-github-app-token/build/libs/concourse-github-
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar --allow-incomplete-classpath
 
-FROM alpine:3.15.2@sha256:ceeae2849a425ef1a7e591d8288f1a58cdf1f4e8d9da7510e29ea829e61cf512
+FROM alpine:3.15.3@sha256:f22945d45ee2eb4dd463ed5a431d9f04fcd80ca768bb1acf898d91ce51f7bf04
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
