@@ -9,10 +9,11 @@ COPY gradlew.bat gradlew.bat
 COPY reflect-config.json reflect-config.json
 RUN ./gradlew build --no-daemon
 
-FROM ghcr.io/graalvm/graalvm-ce:latest@sha256:7a9562a544249739ecdf24f10eb88636f71240f57faa1d13fabb61ce9c60f3d7  as build
+FROM ghcr.io/graalvm/graalvm-ce:22.1.0@sha256:7a9562a544249739ecdf24f10eb88636f71240f57faa1d13fabb61ce9c60f3d7  as build
 RUN gu install native-image
 
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
+WORKDIR /
 RUN mkdir musl
 RUN curl https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz --output musl.tgz
 RUN tar -xzf musl.tgz -C musl --strip-components 1
