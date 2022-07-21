@@ -9,10 +9,11 @@ COPY gradlew.bat gradlew.bat
 COPY reflect-config.json reflect-config.json
 RUN ./gradlew build --no-daemon
 
-FROM ghcr.io/graalvm/graalvm-ce:latest@sha256:5a200da297ce846b718c56619aeaf1204686587c4bc9979d37b2c4ffd10e0806  as build
+FROM ghcr.io/graalvm/graalvm-ce:22.1.0@sha256:7a9562a544249739ecdf24f10eb88636f71240f57faa1d13fabb61ce9c60f3d7  as build
 RUN gu install native-image
 
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
+WORKDIR /
 RUN mkdir musl
 RUN curl https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz --output musl.tgz
 RUN tar -xzf musl.tgz -C musl --strip-components 1
@@ -31,7 +32,7 @@ WORKDIR /
 
 COPY --from=java-builder concourse-github-app-token/build/libs/concourse-github-app-token.jar /app/concourse-github-app-token.jar
 COPY reflect-config.json /app/reflect-config.json
-RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar --allow-incomplete-classpath
+RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar
 
 FROM alpine:3.16.1@sha256:7580ece7963bfa863801466c0a488f11c86f85d9988051a9f9c68cb27f6b7872
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
