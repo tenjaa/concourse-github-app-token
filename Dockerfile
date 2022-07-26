@@ -9,7 +9,7 @@ COPY gradlew.bat gradlew.bat
 COPY reflect-config.json reflect-config.json
 RUN ./gradlew build --no-daemon
 
-FROM ghcr.io/graalvm/graalvm-ce:22.1.0@sha256:7a9562a544249739ecdf24f10eb88636f71240f57faa1d13fabb61ce9c60f3d7  as build
+FROM ghcr.io/graalvm/graalvm-ce:22.2.0@sha256:2e3e1ae3a637f8a5bf6efd79518aa5be292578cbddc1bc469988c394835713d6  as build
 RUN gu install native-image
 
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
