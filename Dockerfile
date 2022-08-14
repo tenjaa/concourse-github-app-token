@@ -15,10 +15,12 @@ RUN gu install native-image
 # https://www.graalvm.org/reference-manual/native-image/StaticImages/
 WORKDIR /
 RUN mkdir musl
-RUN curl https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz --output musl.tgz
+# https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz
+COPY lib/musl.tgz musl.tgz
 RUN tar -xzf musl.tgz -C musl --strip-components 1
 RUN mkdir zlib
-RUN curl https://zlib.net/zlib-1.2.12.tar.gz --output zlib.tar.gz
+# https://zlib.net/zlib-1.2.12.tar.gz
+COPY lib/zlib.tar.gz zlib.tar.gz
 RUN tar -xzf zlib.tar.gz -C zlib --strip-components 1
 
 ENV CC=/musl/bin/gcc
