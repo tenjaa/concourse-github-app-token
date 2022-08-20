@@ -1,4 +1,4 @@
-FROM openjdk:18.0.1.1 as java-builder
+FROM openjdk:18.0.2.1 as java-builder
 RUN microdnf install findutils
 WORKDIR concourse-github-app-token
 COPY gradle gradle
