@@ -11,7 +11,7 @@ dependencies {
     val junitVersion = "5.9.1"
 
     implementation("commons-io:commons-io:2.11.0")
-    implementation("com.auth0:java-jwt:4.2.0")
+    implementation("com.auth0:java-jwt:4.2.1")
     implementation("com.google.code.gson:gson:2.10")
     implementation("org.json:json:20220924")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
