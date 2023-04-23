@@ -18,7 +18,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.10.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.11.0")
     testImplementation("com.google.jimfs:jimfs:1.2")
     testImplementation("org.mockito:mockito-core:5.3.1")
 }
