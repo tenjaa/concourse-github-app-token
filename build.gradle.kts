@@ -19,7 +19,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.11.0")
-    testImplementation("com.google.jimfs:jimfs:1.2")
+    testImplementation("com.google.jimfs:jimfs:1.3.0")
     testImplementation("org.mockito:mockito-core:5.4.0")
 }
 
