@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    val junitVersion = "5.10.0"
+    val junitVersion = "5.10.1"
 
     implementation("commons-io:commons-io:2.15.0")
     implementation("com.auth0:java-jwt:4.3.0")
