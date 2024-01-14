@@ -20,7 +20,7 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.25.1")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
     testImplementation("com.google.jimfs:jimfs:1.3.0")
-    testImplementation("org.mockito:mockito-core:5.8.0")
+    testImplementation("org.mockito:mockito-core:5.9.0")
 }
 
 tasks.test {
