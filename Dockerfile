@@ -36,6 +36,6 @@ COPY --from=java-builder concourse-github-app-token/build/libs/concourse-github-
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static --libc=musl --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar
 
-FROM alpine:3.20.2@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
+FROM alpine:3.20.3@sha256:d92eaec1308e111c3623b46df740297b4b9021355d3f1d491a1398ee8f640ebf
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
