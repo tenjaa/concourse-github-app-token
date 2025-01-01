@@ -13,7 +13,7 @@ dependencies {
     implementation("commons-io:commons-io:2.18.0")
     implementation("com.auth0:java-jwt:4.3.0")
     implementation("com.google.code.gson:gson:2.11.0")
-    implementation("org.json:json:20240303")
+    implementation("org.json:json:20241224")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
