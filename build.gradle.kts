@@ -10,7 +10,7 @@ repositories {
 dependencies {
     val junitVersion = "5.11.4"
 
-    implementation("commons-io:commons-io:2.19.0")
+    implementation("commons-io:commons-io:2.20.0")
     implementation("com.auth0:java-jwt:4.3.0")
     implementation("com.google.code.gson:gson:2.13.1")
     implementation("org.json:json:20250517")
