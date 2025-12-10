@@ -1,4 +1,4 @@
-FROM openjdk:21 as java-builder
+FROM openjdk:25 as java-builder
 RUN microdnf install findutils
 WORKDIR concourse-github-app-token
 COPY gradle gradle
