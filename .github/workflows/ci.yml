@@ -6,6 +6,7 @@ concurrency:
 permissions:
   contents: read
   id-token: write
+  packages: write
 
 on:
   push:
