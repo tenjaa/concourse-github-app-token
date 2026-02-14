@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/jdk-community:21@sha256:57e5c4cf8536dac4346611691c31ea4828f3ff7bbb0d3695902b234f69ed99b5 AS java-builder
+FROM ghcr.io/graalvm/jdk-community:25@sha256:a3bdba6a313cddc89f7e1b2649140e898c68ba356994a9c317b96b01bcb9f982 AS java-builder
 RUN microdnf install findutils
 COPY gradle gradle
 COPY src src
