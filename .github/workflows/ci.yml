@@ -4,6 +4,7 @@ concurrency: ci
 
 permissions:
   contents: read
+  id-token: write
 
 on:
   push:
