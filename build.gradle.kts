@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation("commons-io:commons-io:2.20.0")
+    implementation("commons-io:commons-io:2.21.0")
     implementation("com.auth0:java-jwt:4.3.0")
     implementation("com.google.code.gson:gson:2.13.2")
     implementation("org.json:json:20251224")
