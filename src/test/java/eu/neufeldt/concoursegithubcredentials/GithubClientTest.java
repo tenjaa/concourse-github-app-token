@@ -97,7 +97,7 @@ class GithubClientTest {
         assertThat(recordedRequest.getPath()).isEqualTo("/app/installations/123/access_tokens");
         assertThat(recordedRequest.getBody()).isEqualTo(new Buffer());
         assertThat(recordedRequest.getMethod()).isEqualTo(method);
-        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiIxMjMiLCJleHAiOjE1OTU5MjE2NTksImlhdCI6MTU5NTkyMTA1OX0.ZGyKEiy-lB9FZ5p3ipzyVFW0UvJ6tWqLubuBOMYtrc4WC_NW3IftaEqVqvyVsKtdZbvsYpnf1s3rqb6MCpncyroKkQ0lXWBS2xRjpN2_RpqKZQUTO6QeJdV2oRzRNZsGaVcCzDH26y4v5fZPyFVczO76FtDhXD01XOFK1Yq4yA0QB20_QleohALaSFrkpLF2QKUlDkH2Ipbbad5Q_1mcCwb8QIFTyuk5v0rJ883GpO5NywMFsdB23iwIvevGem8GInfCH4aXa7AqA52odUnAMZCD32E_JloUXL5x9BWkkZwvDfX7USJrFqaHl4EZyAES5fwmxHanFNUNOrX5WMF9aw");
+        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxMjMiLCJpYXQiOjE1OTU5MjEwNTksImV4cCI6MTU5NTkyMTY1OX0.dwCdlfjhmtSCK8L54Mcy1gTDLxnR3WR18vUYTUN6Ka8KEUjpXpXDB14ywUagJSLsUnJdeFRED4xisHf1whWQGDWN4FT7iQbxpuXeUpe_82RFGwshmnmSYKeh8hvwhAmoWxZqvggwPneWoP-BkcAMLbum5OHWQKqd2mEjlZSRR2cBqBcuZpW7IPYPMFRd6y5lEE9oKf9v9hZN6XSz81r-zekHk7-SRZF3CRKtMm-Nul0OOC_nbCgiPadgI7x_YngKHL7wlOdWXYsIw0Irs5FSkE2cSC9JyszEv_cKb0AY6jyBAQDCCt9kaTYt4EBbacJbaerwRI-s7U9m5ItjG8QDvA");
         assertThat(recordedRequest.getHeader("Accept")).isEqualTo("application/vnd.github.machine-man-preview+json");
     }
 }
