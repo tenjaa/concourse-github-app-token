@@ -12,7 +12,7 @@ dependencies {
     implementation("com.auth0:java-jwt:4.5.0")
     implementation("com.google.code.gson:gson:2.13.2")
     implementation("org.json:json:20251224")
-    testImplementation(platform("org.junit:junit-bom:6.0.2"))
+    testImplementation(platform("org.junit:junit-bom:6.0.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.assertj:assertj-core:3.27.7")
