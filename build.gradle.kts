@@ -11,7 +11,7 @@ dependencies {
     implementation("commons-io:commons-io:2.22.0")
     implementation("com.auth0:java-jwt:4.5.2")
     implementation("com.google.code.gson:gson:2.14.0")
-    implementation("org.json:json:20251224")
+    implementation("org.json:json:20260522")
     testImplementation(platform("org.junit:junit-bom:6.1.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
