@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6.0.2
+    - uses: actions/checkout@v6.0.3
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v4.1.0
     - name: Build and push Docker image
@@ -39,7 +39,7 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6.0.2
+    - uses: actions/checkout@v6.0.3
     - uses: actions/download-artifact@v8.0.1
       with:
         name: image
@@ -65,7 +65,7 @@ jobs:
       with:
         username: tenjaa
         password: ${{ secrets.docker_password }}
-    - uses: aws-actions/configure-aws-credentials@v6.1.2
+    - uses: aws-actions/configure-aws-credentials@v6.2.0
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: us-east-1
