@@ -10,7 +10,7 @@ repositories {
 dependencies {
     implementation("commons-io:commons-io:2.22.0")
     implementation("com.auth0:java-jwt:4.6.2")
-    implementation("com.google.code.gson:gson:2.14.0")
+    implementation("com.google.code.gson:gson:2.15.0")
     implementation("org.json:json:20260814")
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
