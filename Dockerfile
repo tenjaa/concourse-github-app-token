@@ -13,6 +13,6 @@ COPY --from=java-builder app/build/libs/concourse-github-app-token.jar /app/conc
 COPY reflect-config.json /app/reflect-config.json
 RUN cd /app; native-image --no-fallback --static-nolibc --enable-https -H:ReflectionConfigurationFiles=reflect-config.json -jar concourse-github-app-token.jar
 
-FROM debian:13-slim@sha256:62bd423aeee912639ca8ee681c2b762cb3e25137e0a92b20be455898a9f034ad
+FROM debian:13-slim@sha256:f6b08b09a05725f9431502d3b5714f5c4576e82c1a84fa1debe0c24a7e0c3ec4
 COPY --from=build /app/concourse-github-app-token /opt/resource/resource
 COPY opt/resource opt/resource
